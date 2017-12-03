@@ -5,7 +5,6 @@ using UnityEngine;
 public class CreateUM : MonoBehaviour {
 
     public GameObject userMenu;
-    public Canvas canvas;
     bool isCreating;
     bool isScreenDown;
     Vector2 startPos;
@@ -61,8 +60,7 @@ public class CreateUM : MonoBehaviour {
                             dest = new Vector2(startPos.x,endPos.y);
                     }
 
-                    GameObject go = Instantiate(userMenu, (Vector2)(Camera.main.ScreenToWorldPoint(dest)), Quaternion.identity, canvas.transform);
-                    go.transform.localScale = new Vector3(sx, sy, 1);
+                    UserMenuManager.instance.createUM(dest,sx,sy);
                     isCreating = false;
                 }
                 isScreenDown = false;

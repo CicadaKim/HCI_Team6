@@ -23,7 +23,6 @@ public class SpriteButtonScr : MonoBehaviour
 
     public bool isIn(Vector2 position)
     {
-        Debug.Log(position);
         return c2d.bounds.Contains(position);
     }
 
